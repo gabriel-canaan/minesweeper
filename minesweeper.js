@@ -5,37 +5,77 @@ var board = {
     cells: [
         {
             row: 0,
-            col: 0,isMine:false,hidden:true
-        },  {
+            col: 0,
+            isMine: false,
+            isMarked: false,
+            hidden: true,
+            surroundingMines:0
+        }, {
             row: 1,
-            col: 0,isMine:false,hidden:true
+            col: 0,
+            isMine: false,
+            isMarked: false,
+            hidden: true,
+            surroundingMines:0
         }, {
             row: 2,
-            col: 0,isMine:false,hidden:true
+            col: 0,
+            isMine: false,
+            isMarked: false,
+            hidden: true,
+            surroundingMines:0
         }, {
             row: 0,
-            col: 1,isMine:false,hidden:true
+            col: 1,
+            isMine: false,
+            isMarked: false,
+            hidden: true,
+            surroundingMines:0
         }, {
             row: 1,
-            col: 1,isMine:false,hidden:true
+            col: 1,
+            isMine: false,
+            isMarked: false,
+            hidden: true,
+            surroundingMines:0
         }, {
             row: 2,
-            col: 1,isMine:false,hidden:true
+            col: 1,
+            isMine: false,
+            isMarked: false,
+            hidden: true,
+            surroundingMines:0
         }, {
             row: 0,
-            col: 2,isMine:false,hidden:true
+            col: 2,
+            isMine: false,
+            isMarked: false,
+            hidden: true,
+            surroundingMines:1
         }, {
             row: 1,
-            col: 2,isMine:false,hidden:true
+            col: 2,
+            isMine: false,
+            isMarked: false,
+            hidden: true,
+            surroundingMines:2
         }, {
             row: 2,
-            col: 2,isMine:false,hidden:true
+            col: 2,
+            isMine: false,
+            isMarked: false,
+            hidden: true,
+            surroundingMines:0
         }
     ]
 };
 function startGame() {
+
     // Don't remove this function call: it makes the game work!
+
+
     lib.initBoard()
+
 }
 
 // Define this functoardion to look for a win condition:
