@@ -7,77 +7,69 @@ var board = {
             row: 0,
             col: 0,
             isMine: false,
-            isMarked: false,
-            hidden: true,
-            surroundingMines:0
+
+            hidden: true
         }, {
             row: 1,
             col: 0,
             isMine: false,
-            isMarked: false,
-            hidden: true,
-            surroundingMines:0
+
+            hidden: true
         }, {
             row: 2,
             col: 0,
             isMine: false,
-            isMarked: false,
-            hidden: true,
-            surroundingMines:0
+
+            hidden: true
         }, {
             row: 0,
             col: 1,
             isMine: false,
-            isMarked: false,
-            hidden: true,
-            surroundingMines:0
+
+            hidden: true
         }, {
             row: 1,
             col: 1,
             isMine: false,
-            isMarked: false,
-            hidden: true,
-            surroundingMines:0
+
+            hidden: true
         }, {
             row: 2,
             col: 1,
             isMine: false,
-            isMarked: false,
-            hidden: true,
-            surroundingMines:0
+
+            hidden: true
         }, {
             row: 0,
             col: 2,
             isMine: false,
-            isMarked: false,
-            hidden: true,
-            surroundingMines:1
+
+            hidden: true
         }, {
             row: 1,
             col: 2,
             isMine: false,
-            isMarked: false,
-            hidden: true,
-            surroundingMines:2
+
+            hidden: true
         }, {
             row: 2,
             col: 2,
-            isMine: false,
-            isMarked: false,
-            hidden: true,
-            surroundingMines:0
+            isMine: true,
+
+            hidden: true
         }
     ]
 };
 function startGame() {
-
-    // Don't remove this function call: it makes the game work!
-
-
     lib.initBoard()
+    // Don't remove this function call: it makes the game work!
+    // loop to call surroundingMines
+    for (var i = 0; i < board.cells.length; i++) {
+        console.log(board.cells[i])
+        board.cells[i].surroundingMines = countSurroundingMines(board.cells[i]);
 
+    }
 }
-
 // Define this functoardion to look for a win condition:
 //
 // 1. Are all of the cells that are NOT mines visible?
@@ -97,4 +89,17 @@ function checkForWin() {
 //
 // It will return cell objects in an array. You should loop through
 // them, counting the number of times `cell.isMine` is true.
-function countSurroundingMines(cell) {}
+
+  function countSurroundingMines(cell) {
+      var surrounding = lib.getSurroundingCells(cell.row, cell.col);
+      var count = 0;
+      for (var i = 0; i < surrounding.length; i++) {
+      if (surrounding[i].isMine == true) {
+
+              count++;
+              console.log("count was increased, loop#"+ i);
+                   console.log("isMine logged as: "+surrounding[i].isMine+" for loop# "+i);
+          }
+      }
+      return count;
+  }
